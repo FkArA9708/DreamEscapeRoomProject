@@ -1,0 +1,14 @@
+WEEK 1
+
+Homepage met uitleg over het spel, vertel wat het doel is, hoe het werkt en eventueel wie het gemaakt hebben: Igor, Furkan
+
+
+Winscherm: Igor
+
+Verliesscherm: Furkan
+
+
+Database: Igor, Furkan
+
+------------------
+OP TIJD INLEVEREN BETEKENT GEEN PUNTEN 
