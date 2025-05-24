@@ -7,6 +7,24 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'lemonmilkmedium';
+    src: url('../DreamEscapeRoomProject/lemonmilk/LEMONMILK-Medium.otf') format('opentype'),
+    url('../DreamEscapeRoomProject/lemonmilk/LEMONMILK-Medium.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'lemonmilkbold';
+    src: url('../DreamEscapeRoomProject/lemonmilk/LEMONMILK-Bold.otf') format('opentype'),
+    url('../DreamEscapeRoomProject/lemonmilk/LEMONMILK-Bold.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -14,57 +32,134 @@ body {
 /*Homepage */
 
 #logonav {
-
+    width: 18em;
+    height: auto;
+    position: relative;
+    right: 3em;
 }
 
 #logofooter {
-    
+    width: 18em;
+    height: auto;
+    position: relative;
 }
 
 
 #navbar_dreamescape {
-
+    background-color: #eeecec;
 }
+
+#navbar_dreamescape li a {
+    text-decoration: none;
+    margin-left: 17em;
+    margin-right: 3em;
+    font-family: 'lemonmilkregular';
+    color: #2F4159;
+}
+
+#navbar_dreamescape li a:hover {
+    color: black;
+}
+
+#navbar_dreamescape ul {
+    list-style-type: none;               
+    margin: 0;               
+    display: flex;           
+    align-items: center;     
+    gap: 2em;            
+}
+
 
 #backgroundimagehome {
-
+    background-image: url(../DreamEscapeRoomProject/images/elliotm-NZXAY_QtSUw-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;         
+    background-position: center;    
+    width: 100%;                    
+    height: 110vh;                  
 }
 
-#paragraph1 {
 
+#paragraph1 {
+   font-family: 'lemonmilkbold';
+    position: relative;
+    color: black;
+    bottom: 15em;
+    margin-left: 4em;
+    margin-right: 10em;
+    font-size: 2.5em;
 }
 
 #paragraph2 {
-
+    font-family: 'lemonmilkmedium';
+    margin-left: 4em;
+    margin-right: 4em;
+    position: relative;
+    bottom: 6em;
+    font-size: 1.5em;
+    color: #2F4159;
 }
 
 
 #paragraph3 {
-
+    font-family: 'lemonmilkmedium';
+    margin-left: 6.5em;
+    margin-right: 7em;
 }
 
 #paragraph4 {
-
+    font-family: 'lemonmilkmedium';
+    margin-left: 6.5em;
+    margin-right: 7em;
 }
 
 #paragraph5 {
-
+   font-family: 'lemonmilkmedium';
+    margin-left: 6.5em;
+    margin-right: 7em;
+    margin-bottom: 90px;
 }
 
 #strongtext {
-
+    font-family: 'lemonmilkbold';
+    margin-left: 5.3em;
+    font-size: 1.2em;
 }
 
 #strongtext2 {
-
+    font-family: 'lemonmilkbold';
+    margin-left: 5.3em;
+    font-size: 1.2em;
 }
 
 
 #strongtext3 {
-
+    font-family: 'lemonmilkbold';
+    margin-left: 5.3em;
+    font-size: 1.2em;
 }
 
 #footer_dreamescape {
-
+    background-color: #eeecec;
 }
 
+#copyright {
+    font-family: 'lemonmilkmedium';
+    color: #2F4159;
+    position: relative;
+    left: 62em;
+    top: 190px;
+}
+
+
+/* Lost escape room.php */
+
+#backgroundimageyoulost {
+  background-image: url(../DreamEscapeRoomProject/images/youlose.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;        /* ensures the image keeps its aspect ratio */
+  background-position: center center;
+  background-attachment: fixed;    /* optional: fixes the image in place */
+  width: 100vw;
+  height: 100vh;
+}
