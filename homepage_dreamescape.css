@@ -157,9 +157,51 @@ body {
 #backgroundimageyoulost {
   background-image: url(../DreamEscapeRoomProject/images/youlose.jpg);
   background-repeat: no-repeat;
-  background-size: contain;        /* ensures the image keeps its aspect ratio */
+  background-size: contain;        
   background-position: center center;
-  background-attachment: fixed;    /* optional: fixes the image in place */
+  background-attachment: fixed;    
   width: 100vw;
   height: 100vh;
+    overflow: hidden;     /* Disable scrolling */
+    margin: 0;
+}
+
+#youlost {
+    font-family: 'lemonmilkbold';
+    position: relative;
+    bottom: 13em;
+    color: white;
+    font-size: 3em;
+    margin-left: 9em;
+    margin-right: 9em;
+}
+
+#button1, #button2 {
+    background-color: white;
+    width: 6em;
+    position: relative;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+#button1 {
+   bottom: 32em;
+    left: 27em;
+    border-radius: 1em;
+}
+
+#button2 {
+    bottom: 37em;
+    left: 58.3em;
+    border-radius: 1em;
+}
+
+#room1link, #room2link {
+    font-family: 'lemonmilkbold';
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block; 
+    text-align: center;
+    color: #2F4159;
 }
