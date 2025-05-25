@@ -32,6 +32,10 @@ try {
     <?php endforeach; ?>
   </div>
 
+  <div class="nav-button">
+    <a href="lostescaperoom.php" class="button">Give up?</a>
+  </div>
+
   <section class="overlay" id="overlay" onclick="closeModal()"></section>
 
   <section class="modal" id="modal">
