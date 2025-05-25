@@ -16,6 +16,6 @@
 
   <button><a href="room_1.php">Klik hier voor een demonstratie van kamer 1</a></button>
 
-</body>
+</body>g
 
 </html>
