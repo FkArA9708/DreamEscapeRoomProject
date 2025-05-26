@@ -1,6 +1,10 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 a {
@@ -58,4 +62,59 @@ button {
   margin-top: 10px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.bgwin {
+  background-image: url(images/winner.jpg);
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  padding-top: 15vh; 
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+
+.buttons {
+  display: flex;
+  gap: 1rem; 
+}
+
+.button_room {
+  width: 100px;
+  height: 100px;
+  background-color: transparent; 
+  color: white;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button_room:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
