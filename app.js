@@ -1,58 +1,57 @@
-// Deze functie opent de modal en toont de vraag
+let currentIndex = -1;
+let correctAnswers = 0;
+let totalQuestions = document.querySelectorAll('.box, .hotspot').length;
+
+// Automatically detect room from PHP via a global JS variable
+let currentRoom = window.roomId || 1;
+
 function openModal(index) {
-  // Zoek het element met de class 'box' en het bijbehorende data-index
-  let box = document.querySelector(`.box[data-index='${index}']`);
+  const boxes = document.querySelectorAll('.box, .hotspot');
+  const box = boxes[index];
+  const question = box.getAttribute('data-question');
 
-  // Haal de vraag en het juiste antwoord uit de dataset van de box
-  let questionText = box.dataset.question;
-  let correctAnswer = box.dataset.answer;
+  currentIndex = index;
 
-  // Zet de vraagtekst in het modalvenster
-  document.getElementById('question').innerText = questionText;
-
-  // Zet het correcte antwoord in de modal, zodat we het later kunnen vergelijken
-  document.getElementById('modal').dataset.answer = correctAnswer;
-
-  // Maak het antwoordveld leeg
+  document.getElementById('question').textContent = question;
   document.getElementById('answer').value = '';
-
-  // Toon de overlay en de modal door de display-stijl te veranderen naar 'block'
-  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('feedback').textContent = '';
   document.getElementById('modal').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
 }
 
-// Deze functie sluit de modal en de overlay
 function closeModal() {
-  // Zet de overlay en modal weer op 'none' zodat ze niet meer zichtbaar zijn
-  document.getElementById('overlay').style.display = 'none';
   document.getElementById('modal').style.display = 'none';
-  
-  // Maak de feedback tekst leeg
-  document.getElementById('feedback').innerText = '';
+  document.getElementById('overlay').style.display = 'none';
 }
 
-// Deze functie controleert of het ingevoerde antwoord correct is
 function checkAnswer() {
-  // Haal het antwoord van de gebruiker op uit het invoerveld en verwijder onnodige spaties
-  let userAnswer = document.getElementById('answer').value.trim();
-  
-  // Haal het juiste antwoord op uit de modal
-  let correctAnswer = document.getElementById('modal').dataset.answer;
-  
-  // Haal het feedback element op om de gebruiker te informeren
-  let feedback = document.getElementById('feedback');
+  const answerInput = document.getElementById('answer').value.trim().toLowerCase();
+  const boxes = document.querySelectorAll('.box, .hotspot');
+  const box = boxes[currentIndex];
+  const correctAnswer = box.getAttribute('data-answer').trim().toLowerCase();
+  const feedback = document.getElementById('feedback');
 
-  // Vergelijk het antwoord van de gebruiker met het juiste antwoord (hoofdlettergevoeligheid negeren)
-  if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
-    // Als het antwoord juist is, geef positieve feedback
-    feedback.innerText = 'Correct! Goed gedaan!';
+  if (answerInput === correctAnswer) {
+    feedback.textContent = 'Correct!';
     feedback.style.color = 'green';
+    box.style.backgroundColor = 'green';
+    box.onclick = null;
 
-    // Sluit de modal na 1 seconde
-    setTimeout(closeModal, 1000);
+    correctAnswers++;
+
+    // Close modal after short delay
+    setTimeout(() => {
+      closeModal();
+      if (correctAnswers === totalQuestions) {
+        if (currentRoom === 1) {
+          window.location.href = 'room_2.php';
+        } else {
+          window.location.href = 'winpagina.html';
+        }
+      }
+    }, 1000);
   } else {
-    // Als het antwoord fout is, geef negatieve feedback
-    feedback.innerText = 'Fout, probeer opnieuw!';
+    feedback.textContent = 'Incorrect, try again.';
     feedback.style.color = 'red';
   }
 }
