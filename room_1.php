@@ -13,7 +13,6 @@ if (!isset($_SESSION['start_time'])) {
     $_SESSION['start_time'] = time();
 }
 
-
 $timeElapsed = time() - $_SESSION['start_time'];
 $timeRemaining = $totalTime - $timeElapsed;
 
@@ -68,18 +67,32 @@ try {
        id="room-image" 
        width="800" 
        alt="Escape Room">
-
-  <?php foreach ($questions as $index => $question): ?>
-    <div class="hotspot" 
-         style="top: <?= 20 + $index * 15 ?>%; left: <?= 25 + $index * 10 ?>%;" 
-         onclick="openModal(<?= $index ?>)"
-         data-index="<?= $index ?>" 
-         data-id="<?= $question['id'] ?>" 
-         data-question="<?= htmlspecialchars($question['question']) ?>" 
-         data-answer="<?= htmlspecialchars($question['answer']) ?>" 
-         title="Click to answer"></div>
-  <?php endforeach; ?>
 </div>
+<?php
+$positions = [
+    ['top' => '37%', 'left' => '33%'], // Hotspot 1
+    ['top' => '66%', 'left' => '60.5%'], // Hotspot 2
+    ['top' => '70%', 'left' => '20%'], // Hotspot 3
+    // Add more positions as needed
+];
+?>
+
+<?php foreach ($questions as $index => $question): ?>
+  <?php 
+    $top = $positions[$index]['top']; 
+    $left = $positions[$index]['left']; 
+  ?>
+  <div class="hotspot" 
+       style="top: <?= $top ?>; left: <?= $left ?>;" 
+       onclick="openModal(<?= $index ?>)"
+       data-index="<?= $index ?>" 
+       data-id="<?= $question['id'] ?>" 
+       data-question="<?= htmlspecialchars($question['question']) ?>" 
+       data-answer="<?= htmlspecialchars($question['answer']) ?>" 
+       title="Click to answer"></div>
+<?php endforeach; ?>
+
+
 
 <div class="nav-button">
   <a href="lostescaperoom.php" class="button">Give up?</a>
@@ -90,53 +103,18 @@ try {
 <section class="modal" id="modal">
   <h2>Escape Room Vraag</h2>
   <p id="question"></p>
+  <p id="riddle-text" style="color: #fff; margin-top: 10px; font-style: italic; display: none;"></p>
   <input type="text" id="answer" placeholder="Typ je antwoord">
   <button onclick="checkAnswer()">Verzenden</button>
   <p id="feedback"></p>
 </section>
 
+
 <script>
   window.roomId = <?= (isset($questions[0]['roomId']) ? intval($questions[0]['roomId']) : 1) ?>;
 </script>
 
-
 <script src="app.js"></script>
 
-<script>
-function openModal(index) {
-  const hotspot = document.querySelector(`.hotspot[data-index="${index}"]`);
-  const question = hotspot.dataset.question;
-  const answer = hotspot.dataset.answer;
-  const id = hotspot.dataset.id;
-
-  document.getElementById('question').innerText = question;
-  document.getElementById('modal').dataset.answer = answer;
-  document.getElementById('answer').value = '';
-
-  document.getElementById('overlay').style.display = 'block';
-  document.getElementById('modal').style.display = 'block';
-
-  const imageContainer = document.getElementById('image-container');
-
-  if (id === "1") {
-    document.body.style.backgroundImage = "url('images/time.jpg')";
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center 0.1vh';
-    document.body.style.backgroundRepeat = 'no-repeat';
-    imageContainer.style.display = 'none';
-  } else {
-    document.body.style.backgroundImage = '';
-    imageContainer.style.display = 'inline-block';
-  }
-}
-
-function closeModal() {
-  document.getElementById('overlay').style.display = 'none';
-  document.getElementById('modal').style.display = 'none';
-  document.getElementById('feedback').innerText = '';
-  document.getElementById('image-container').style.display = 'inline-block';
-  document.body.style.backgroundImage = '';
-}
-</script>
 </body>
 </html>

@@ -205,3 +205,23 @@ body {
     text-align: center;
     color: #2F4159;
 }
+
+
+
+/* room_1.php */
+
+.hotspot {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0,0,255,0.3);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+
+
+.hotspot:hover {
+  background-color: rgba(0,255,0,0.3);
+}
