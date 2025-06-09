@@ -118,7 +118,7 @@ function checkAnswer() {
         if (currentRoom === 1) {
           window.location.href = 'room_2.php';
         } else {
-          window.location.href = 'winpagina.html';
+          window.location.href = 'winpagina.php';
         }
       }
     }, 1000);

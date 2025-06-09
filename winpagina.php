@@ -14,7 +14,7 @@
 
     <div class="buttons">
       <a href="room_1.php" class="button_room">Try again?</a>
-      <a href="index.php" class="button_room">Go home?</a>
+      <a href="index.html" class="button_room">Go home?</a>
     </div>
   </div>
 </body>
