@@ -13,8 +13,8 @@
     <h1>You Won!</h1>
 
     <div class="buttons">
-      <a href="room_1.php" class="button_room">Room 1</a>
-      <a href="room_2.php" class="button_room">Room 2</a>
+      <a href="room_1.php" class="button_room">Try again?</a>
+      <a href="index.php" class="button_room">Go home?</a>
     </div>
   </div>
 </body>
