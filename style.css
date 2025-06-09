@@ -91,7 +91,7 @@ button {
   background-color: #2980b9;
 }
 
-/* Hotspot overrides */
+
 .hotspot {
   opacity: 0;
   transition: opacity 0.3s, background-color 0.3s;
@@ -99,12 +99,12 @@ button {
   height: 10px !important;
   position: absolute;
   cursor: pointer;
-  background-color: rgba(255, 0, 0, 0.5); /* This will only be seen when visible */
+  background-color: rgba(255, 0, 0, 0.5); 
   border-radius: 5px;
   z-index: 10;
 }
 
-/* Show hotspot on hover */
+
 .hotspot:hover {
   opacity: 1;
 }

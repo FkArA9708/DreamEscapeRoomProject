@@ -6,8 +6,8 @@ if (isset($_GET['reset']) && $_GET['reset'] == '1') {
     unset($_SESSION['start_time']);
 }
 
-// Set total allowed time (in seconds)
-$totalTime = 10 * 60; // 10 minutes
+
+$totalTime = 10 * 60; 
 
 if (!isset($_SESSION['start_time'])) {
     $_SESSION['start_time'] = time();
@@ -70,10 +70,10 @@ try {
 </div>
 <?php
 $positions = [
-    ['top' => '37%', 'left' => '33%'], // Hotspot 1
-    ['top' => '66%', 'left' => '60.5%'], // Hotspot 2
-    ['top' => '70%', 'left' => '20%'], // Hotspot 3
-    // Add more positions as needed
+    ['top' => '37%', 'left' => '33%'], 
+    ['top' => '66%', 'left' => '60.5%'], 
+    ['top' => '70%', 'left' => '20%'], 
+    
 ];
 ?>
 

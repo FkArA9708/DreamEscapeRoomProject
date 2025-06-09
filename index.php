@@ -11,8 +11,7 @@
 <body>
 
   <h1>Welkom</h1>
-  <!-- De button hieronder is alleen voor testdoeleinden bij het opstarten van het project.
-     Deze pagina is bedoeld voor de uitleg van jullie escape room. -->
+  
 
   <button><a href="room_1.php">Klik hier voor een demonstratie van kamer 1</a></button>
 

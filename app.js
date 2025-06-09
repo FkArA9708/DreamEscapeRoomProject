@@ -2,7 +2,7 @@ let currentIndex = -1;
 let correctAnswers = 0;
 let totalQuestions = document.querySelectorAll('.box, .hotspot').length;
 
-// Automatically detect room from PHP via a global JS variable
+
 let currentRoom = window.roomId || 1;
 
 function openModal(index) {
@@ -29,7 +29,7 @@ function openModal(index) {
     document.body.style.backgroundPosition = 'center 0.1vh';
     document.body.style.backgroundRepeat = 'no-repeat';
     imageContainer.style.display = 'none';
-    wallText.style.display = 'none';  // hide overlay text
+    wallText.style.display = 'none';  
   } 
  else if (id === "2") {
     document.body.style.backgroundImage = "url('images/wall.jpg')";
@@ -38,9 +38,9 @@ function openModal(index) {
     document.body.style.backgroundRepeat = 'no-repeat';
 
     const imageContainer = document.getElementById('image-container');
-    imageContainer.style.display = 'none'; // hide image container (or just room-image)
+    imageContainer.style.display = 'none'; 
 
-    // Hide hotspot 2
+    
     const hotspots = document.querySelectorAll('.hotspot, .box');
     hotspots.forEach(hs => {
       if (hs.getAttribute('data-id') === "2") {
@@ -72,14 +72,14 @@ function closeModal() {
 
   document.body.style.backgroundImage = '';
 
-  // Show image container again
+  
   const imageContainer = document.getElementById('image-container');
   imageContainer.style.display = 'inline-block';
 
-  // Show all hotspots
+  
   const hotspots = document.querySelectorAll('.hotspot, .box');
   hotspots.forEach(hs => {
-    hs.style.display = 'block'; // show all hotspots again including hotspot 2
+    hs.style.display = 'block'; 
   });
 
 
@@ -100,17 +100,17 @@ function checkAnswer() {
   feedback.textContent = 'Correct!';
   feedback.style.color = 'green';
 
-  box.classList.add('answered-correctly'); // ✅ add this line
+  box.classList.add('answered-correctly'); 
 
-  box.onclick = null; // prevent re-clicking
+  box.onclick = null; 
   correctAnswers++;
 
 
-    // ✅ Restore image and background after delay
+    
     setTimeout(() => {
       closeModal();
 
-      // Restore image container and background
+     
       document.body.style.backgroundImage = '';
       document.getElementById('image-container').style.display = 'inline-block';
 

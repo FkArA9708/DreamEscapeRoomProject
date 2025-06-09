@@ -6,7 +6,7 @@ CREATE TABLE questions (
     roomId INT NOT NULL
 );
 
--- Let op, dit is een voorbeeld!
+
 INSERT INTO questions (question, answer, hint, roomId)
 VALUES
     ('Welke Pokémon is nummer 25 in de Pokédex?', 'Pikachu', 'Het is de mascotte van Pokémon.', 1),
