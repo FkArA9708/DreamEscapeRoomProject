@@ -48,7 +48,7 @@
     <input type="submit" name="btn_wzg" value="Wijzig">
   </form>
   <br><br>
-  <a href='index.php'>Home</a>
+  <a href='index_crud.php'>Home</a>
 </body>
 </html>
 

@@ -2,16 +2,16 @@
 session_start();
 require_once('./dbcon.php');
 
-$total_time_limit = 600;
+$totalTime = 60 * 60; // same total as room_1.php
 
 if (!isset($_SESSION['start_time'])) {
-    $_SESSION['start_time'] = time();
+    $_SESSION['start_time'] = time(); // this should already be set by room_1
 }
 
-$elapsed_time = time() - $_SESSION['start_time'];
-$remaining_time = $total_time_limit - $elapsed_time;
+$timeElapsed = time() - $_SESSION['start_time'];
+$remainingTime = $totalTime - $timeElapsed;
 
-if ($remaining_time <= 0) {
+if ($remainingTime <= 0) {
     header("Location: lostescaperoom.php");
     exit();
 }
@@ -174,7 +174,7 @@ function getRandomPosition() {
 </section>
 
 <script>
-  let remainingTime = <?= $remaining_time ?>;
+  let remainingTime = <?= $remainingTime ?>;
   let currentIndex = -1;
   let correctAnswers = 0;
   let totalQuestions = document.querySelectorAll('.box').length;

@@ -2,12 +2,23 @@
 require_once('./dbcon.php');
 session_start();
 
-if (isset($_GET['reset']) && $_GET['reset'] == '1') {
-    unset($_SESSION['start_time']);
+// Redirect to team creation if no team exists
+if (!isset($_SESSION['team_id'])) {
+    header("Location: create_team.php");
+    exit();
 }
 
+if (isset($_GET['reset']) && $_GET['reset'] == '1') {
+    // Reset timer
+    unset($_SESSION['start_time']);
+    $_SESSION['start_time'] = time();
+    
+    // Update team start time in database
+    $stmt = $db_connection->prepare("UPDATE teams SET start_time = NOW() WHERE team_id = ?");
+    $stmt->execute([$_SESSION['team_id']]);
+}
 
-$totalTime = 10 * 60; 
+$totalTime = 60 * 60; // 60 minutes
 
 if (!isset($_SESSION['start_time'])) {
     $_SESSION['start_time'] = time();
@@ -17,15 +28,15 @@ $timeElapsed = time() - $_SESSION['start_time'];
 $timeRemaining = $totalTime - $timeElapsed;
 
 if ($timeRemaining <= 0) {
-  header("Location: lostescaperoom.php");
-  exit();
+    header("Location: lostescaperoom.php");
+    exit();
 }
 
 try {
-  $stmt = $db_connection->query("SELECT * FROM questions WHERE roomId = 1");
-  $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $db_connection->query("SELECT * FROM questions WHERE roomId = 1");
+    $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-  die("Databasefout: " . $e->getMessage());
+    die("Databasefout: " . $e->getMessage());
 }
 ?>
 
@@ -61,6 +72,8 @@ try {
 
 <!-- Timer -->
 <div id="timer" style="position: fixed; top: 10px; right: 20px; font-size: 24px; background: #000; color: #fff; padding: 10px; border-radius: 8px;">Loading...</div>
+
+<!-- ... rest of your room_1.php code ... -->
 
 <div id="image-container" style="position: relative; display: inline-block; margin-top: 30px;">
   <img src="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 

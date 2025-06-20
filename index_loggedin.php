@@ -12,8 +12,8 @@
             <div id="navbar_dreamescape">
                 <ul>
                     <li><img src="images/DreamEscape.png" alt="logo" id="logonav"></li>
-                    <li><a href="room_1.php?reset=1" class="button">Room 1</a></li>
-                    <li><a href="room_2.php">Room 2</a></li>
+                    <!-- Change Room 1 link -->
+                    <li><a href="create_team.php">Start Game</a></li>
                     <li><a href="logout.php">Log out</a></li>
 
 
