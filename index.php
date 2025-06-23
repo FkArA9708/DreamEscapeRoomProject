@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Escape Room</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepage_dreamescape.css">
+    <title>DreamEscape Homepage</title>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <div id="navbar_dreamescape">
+                <ul>
+                    <li><img src="images/DreamEscape.png" alt="logo" id="logonav"></li>
+                <!-- Change Room 1 link -->
+                    <li><a href="create_team.php">Start Game</a></li>
+                    <li><a href="login.php">Login</a></li>
+                    <li><a href="registratie/index.html">Register</a>
+                    
 
-  <h1>Welkom</h1>
-  
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <img src="../DreamEscapeRoomProject/images/elliotm-NZXAY_QtSUw-unsplash.jpg" alt="backgroundimage" id="backgroundimagehome">
+    <article>
+    <h1 id="paragraph1">Welcome to DreamEscape – Escape the world of your dreams... or nightmares</h1>
+<h3 id="paragraph2">Step into DreamEscape, a unique escape room where reality and imagination blur. In this mysterious world, you're never quite sure if you're dreaming—or awake. Every detail, sound, and puzzle brings you closer to the truth… and to the exit.</h2>
 
-  <button><a href="room_1.php">Klik hier voor een demonstratie van kamer 1</a></button>
+<strong id="strongtext">The Goal</strong>
+<p id="paragraph3">You and your team find yourselves trapped in a dream world where time is ticking. You have 60 minutes to solve the mystery, 
+uncover hidden clues, and make the right choices to wake up — before you're lost in the dream forever.</p>
 
-</body>g
+<strong id="strongtext2">How It Works</strong>
+<p id="paragraph4">Team up: Form a group of 2 to 6 players. Teamwork is essential.
 
+Enter the dream: Once the door closes, your adventure begins. The room is filled with riddles, hidden clues, visual illusions, and immersive soundscapes.
+
+Solve the mystery: Everything in the room might mean something—or nothing at all. You'll need logic, communication, and sometimes pure instinct to progress.
+
+Escape in time: You have exactly 60 minutes. Fail, and… well, you'll wake up feeling a little strange.</p> 
+
+<strong id="strongtext3">About the Creator</strong>
+<p id="paragraph5">DreamEscape was passionately designed and built by Igor and Furkan. Every element has been handcrafted, designed, and tested to create an immersive, original experience. No cliché padlocks or puzzles you've already seen ten times, but a dream world full of surprises.</p>
+</article>
+
+<footer>
+    <div id="footer_dreamescape">
+    <p id="copyright">2025 DreamEscape - All Rights Reserved</p>
+    <img src="images/DreamEscape.png" alt="logo" id="logofooter">
+    </div>
+</footer>
+    
+</body>
 </html>
