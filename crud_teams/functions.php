@@ -131,8 +131,7 @@ function updateRecord($row){
     $sql = "UPDATE " . CRUD_TABLE .
     " SET 
         team_naam = :team_naam, 
-        aantal_spelers = :aantal_spelers, 
-        resultaat = :resultaat
+        aantal_spelers = :aantal_spelers
     WHERE team_id = :team_id
     ";
 
@@ -142,7 +141,6 @@ function updateRecord($row){
     $stmt->execute([
         ':team_naam'=>$row['team_naam'],
         ':aantal_spelers'=>$row['aantal_spelers'],
-        ':resultaat'=>$row['resultaat'],
         ':team_id'=>$row['team_id']
     ]);
 
@@ -157,8 +155,8 @@ function insertRecord($post){
 
     // Maak een query 
     $sql = "
-        INSERT INTO " . CRUD_TABLE . " (team_naam, aantal_spelers, resultaat)
-        VALUES (:team_naam, :aantal_spelers, :resultaat) 
+        INSERT INTO " . CRUD_TABLE . " (team_naam, aantal_spelers)
+        VALUES (:team_naam, :aantal_spelers) 
     ";
 
     // Prepare query
@@ -166,8 +164,7 @@ function insertRecord($post){
     // Uitvoeren
     $stmt->execute([
         ':team_naam'=>$_POST['team_naam'],
-        ':aantal_spelers'=>$_POST['aantal_spelers'],
-        ':resultaat'=>$_POST['resultaat'],
+        ':aantal_spelers'=>$_POST['aantal_spelers']
     ]);
 
     

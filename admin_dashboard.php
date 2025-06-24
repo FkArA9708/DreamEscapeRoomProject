@@ -12,7 +12,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
 </head>
-<body>
+<body> <!--welkom voor admin -->
     <h1>Welkom, <?php echo $_SESSION['username']; ?> (Admin)</h1>
     <a href="logout.php">Log uit</a>
     <a href="index_crud.php">CRUD Vragen</a>

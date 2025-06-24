@@ -12,9 +12,9 @@
             <div id="navbar_dreamescape">
                 <ul>
                     <li><img src="images/DreamEscape.png" alt="logo" id="logonav"></li>
-                    <li><a href="create_team.php">Start Game</a></li>
-                    <li><a href="logout.php">Log out</a></li>
-                    <li><a href="time.php">Check the score!</a></li>
+                    <li><a href="create_team.php" style="font-size: 12px;">Start Game</a></li>
+                    <li><a href="logout.php" style="font-size: 12px;">Log out</a></li>
+                    <li><a href="time.php" style="font-size: 12px;">Check the score!</a></li>
 
 
                 </ul>

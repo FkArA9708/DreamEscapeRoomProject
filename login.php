@@ -45,8 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div id="navbar_dreamescape">
                 <ul>
                     <li><img src="images/DreamEscape.png" alt="logo" id="logonav"></li>
-                    <li><a href="room_1.php">Room 1</a></li>
-                    <li><a href="room_2.php">Room 2</a></li>
+                    <li><a href="room_1.php">Play the game</a></li>
                 </ul>
             </div>
         </nav>

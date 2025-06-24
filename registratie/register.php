@@ -19,7 +19,7 @@ if ($check->num_rows > 0) {
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     if ($conn->query($sql) === TRUE) {
         echo "Registration successful!";
-        echo '<a href="../index.php"><button>Go to Home</button></a>';
+        echo '<a href="../index_loggedin.php"><button>Go to Home</button></a>';
     } else {
         echo "Error: " . $conn->error;
     }

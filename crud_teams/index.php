@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<a href="../admin_dashboard.php">Dashboard</a>
     <?php
     // functie: Programma CRUD teans
     // auteur: Vul hier je naam in   
