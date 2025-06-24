@@ -31,6 +31,7 @@ if (isset($_SESSION['team_id'])) {
     <div class="buttons">
       <a href="create_team.php" class="button_room">Play Again</a>
       <a href="index.html" class="button_room">Go Home</a>
+      <a href="time.php" class="button_room">Check the time</a>
     </div>
   </div>
 </body>

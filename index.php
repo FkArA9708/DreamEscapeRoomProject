@@ -12,7 +12,6 @@
             <div id="navbar_dreamescape">
                 <ul>
                     <li><img src="images/DreamEscape.png" alt="logo" id="logonav"></li>
-                <!-- Change Room 1 link -->
                     <li><a href="create_team.php">Start Game</a></li>
                     <li><a href="login.php">Login</a></li>
                     <li><a href="registratie/index.html">Register</a>

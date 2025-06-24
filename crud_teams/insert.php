@@ -27,9 +27,6 @@
             <label for="aantal_spelers">Aantal spelers:</label>
             <input type="number" id="aantal_spelers" name="aantal_spelers" required><br>
 
-            <label for="resultaat">Resultaat:</label>
-            <input type="number" id="resultaat" name="resultaat"><br>
-
             <br><br>
             <input type="submit" name="btn_ins" value="Insert">
         </form>

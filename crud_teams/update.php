@@ -42,9 +42,6 @@
     <label for="aantal_spelers">Aantal spelers:</label>
     <input type="number" id="aantal_spelers" name="aantal_spelers" required value="<?php echo $row['aantal_spelers']; ?>"><br>
 
-    <label for="resultaat">Resultaat:</label>
-    <input type="number" id="resultaat" name="resultaat" required value="<?php echo $row['resultaat']; ?>"><br>
-
     <input type="submit" name="btn_wzg" value="Wijzig">
   </form>
   <br><br>
